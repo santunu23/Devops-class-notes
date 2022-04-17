@@ -1,0 +1,19 @@
+1) Old experience (old console)
+
+1) go to ec2 
+2) instances -> launch instances
+3) in ami -> windows 2019
+4) in instance type -> t2.micro (keep default)
+5) configure instances -> keep default   -> add storage
+6) add storage -> keep default -> add tags
+7) add tags -> keep default -> configure security groups
+8) in configure security group -> add rule -> http ....after that you will have rdp and http   -> review and launch
+9) click on launch -> a pop will come with keypair -> create a new keypair -> put keypair name -> download keypair -> launch instance
+10) now go back to instances --> it would be pending state-> wait for 5 mins for it to get fully started
+###############################Access your machine#####################################
+11) select your machine (checkbox near your machine)
+12) click on connect (on top right)
+13) go to rdp client -> there click on <<<get password>>>  -> there either browse or copy paste your keypair  -> generate password
+14) after that download remote desktop file
+15) open remote desktop connection file -> put password  which was generated in sno 13
+16) you will login into your windows machine
