@@ -1,0 +1,115 @@
+Docker lab
+
+
+##########Login to linux machine ###########
+
+1) sudo su
+
+2) yum install docker -y    (install the docker in your linux machine)
+
+3) which docker         (where exactly the docker is insalled . we use it generally to see if software is installed properly)
+
+4) service docker start   (this will start the docker service)
+
+5) service docker status   (to cross check if you docker is started or not . if it is active it means it is started)
+
+6) docker run -it ubuntu /bin/bash    (this will create a container with ubuntu image. now since ubuntu image is not there in docker engine first it will 
+                                       pull from docker hub and put it in docker engine and then create container)
+
+7) docker images    (list of all the images in docker engine) 
+
+8) docker ps -a    (list of all the containers)
+
+9) docker run -it ubuntu /bin/bash    (this will create container but since ubuntu image is already there it will not pull it from docker hub it will take from engine)
+
+10) docker images    (only ubuntu image is there)
+
+11) docker ps -a   (2 containers are there with 2 different random names)
+
+12) docker run -it --name akshat ubuntu /bin/bash   (this will create a new container with image ubuntu and name akshat)
+
+13) docker ps -a    (to list all the containers)
+
+########################## START AND ENTER IN EXISTING CONTAINER #######################################
+
+
+14) docker ps -a    (copy the container id which you need to start)
+ 
+15) docker start <<container id>>    (start the container)  (in place of container id ,name of container can also be used)
+
+16) docker attach <<container id>>>    (get inside the container)
+
+17) docker rm <<container name>>   (delete container)
+
+#############################################################################################################
+
+
+###################CREATE A CONTAINER FROM IMAGE OF ANOTHER CONTAINER #########################################
+
+There is a container -> edureka container (ubuntu)
+i have created 2 files in that... touch file1 file2
+now i want to create another container (testcontainer2) with the same 2 files.....
+what i will do ?
+
+-> image from the edureka container 
+-> use that image to create testcontainer2  
+-> now the testcontainer2 will also contain file1 and file2
+
+
+18) docker run -it --name edureka ubuntu /bin/bash     (creating a new container with edureka name)
+
+19) touch file2 file3 file4     (these files are created in edureka container)
+
+20) exit
+
+21) docker commit edureka eduimagebyakshat        (so here the image with the name eduimagebyakshat would be created from edureka container)
+
+22) docker images   (you will eduimagebyakshat there which means the image is created successfully)
+
+23) docker run -it --name testcontainer2 eduimagebyakshat /bin/bash    (creating a new container with the image eduimagebyakshat)
+
+24) ls   (you will see file2 file3 file4 created. which means a new container with the content of edureka container is created)
+
+
+35) exit
+
+36) docker ps -a    (you  will edureka and testcontainer2 there which means we are not updating we are a new container with the image of a particular container)
+
+############################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
