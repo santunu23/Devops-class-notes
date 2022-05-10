@@ -71,9 +71,9 @@ what i will do ?
 24) ls   (you will see file2 file3 file4 created. which means a new container with the content of edureka container is created)
 
 
-35) exit
+25) exit
 
-36) docker ps -a    (you  will edureka and testcontainer2 there which means we are not updating we are a new container with the image of a particular container)
+26) docker ps -a    (you  will edureka and testcontainer2 there which means we are not updating we are a new container with the image of a particular container)
 
 ############################################################################################
 
